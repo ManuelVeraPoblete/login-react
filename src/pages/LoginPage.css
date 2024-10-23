@@ -1,0 +1,100 @@
+.auth-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+/* Imagen de fondo para la pantalla de login */
+/* Imagen de fondo para la pantalla de login */
+.login-page {
+    background-image: url('../../public/images/background.jpg'); /* Cambia esta ruta a la imagen que desees */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Contenedor con fondo degradado */
+.login-container {
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
+}
+
+/* Estilo del título */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo del párrafo */
+p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones */
+.auth-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px;
+}
+
+.auth-button {
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    opacity: 0.8;
+}
+
+/* Botón de Google */
+.google-button {
+    background-color: #f30000;
+}
+
+/* Botón de Facebook */
+.facebook-button {
+    background-color: #4267B2;
+}
+
+/* Botón de GitHub */
+.github-button {
+    background-color: #333;
+}
+
