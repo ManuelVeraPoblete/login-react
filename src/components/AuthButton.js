@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useGoogleLogin } from '@react-oauth/google'; // Importamos el hook para el login de Google
+import axios from 'axios'; // Usamos axios para hacer solicitudes HTTP
 import './AuthButton.css';
 
 const AuthButton = ({ platform, onLogin }) => {
@@ -32,11 +33,28 @@ const AuthButton = ({ platform, onLogin }) => {
 
     const { label, style, icon } = getPlatformInfo();
 
+    // Estado para almacenar la información del usuario
+    const [user, setUser] = useState(null);
+
     // Implementamos la lógica de inicio de sesión con Google
     const googleLogin = useGoogleLogin({
-        onSuccess: (tokenResponse) => {
-            console.log(tokenResponse);
-            onLogin('google'); // Redirigimos a la página de bienvenida
+        onSuccess: async (tokenResponse) => {
+            try {
+                const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+                    headers: {
+                        Authorization: `Bearer ${tokenResponse.access_token}`,
+                    },
+                });
+
+                // Guardamos los datos del usuario (nombre, imagen, etc.)
+                const userData = res.data;
+                setUser(userData);
+
+                // Pasamos los datos del usuario al método onLogin
+                onLogin(userData);
+            } catch (error) {
+                console.error('Error fetching user info', error);
+            }
         },
         onError: () => {
             console.log('Login Failed');
