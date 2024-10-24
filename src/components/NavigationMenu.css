@@ -1,0 +1,25 @@
+.navigation-menu {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.navigation-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation-menu li {
+    margin: 20px 0;
+}
+
+.navigation-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation-menu a:hover {
+    text-decoration: underline;
+}
