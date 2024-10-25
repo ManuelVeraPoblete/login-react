@@ -9,7 +9,7 @@ const LoginPage = () => {
 
     const handleLogin = (userData) => {
         // Redirigimos a la página de bienvenida y pasamos los datos del usuario
-        navigate('/welcome', { state: { user: userData } });
+        navigate('/dashboard', { state: { user: userData } });
     };
 
     return (

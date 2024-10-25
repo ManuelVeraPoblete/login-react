@@ -4,15 +4,15 @@ import NavigationMenu from '../components/NavigationMenu';
 import Statistics from '../components/Statistics';
 import DashboardLayout from '../components/DashboardLayout';
 import { useLocation } from 'react-router-dom';
-import './Dashboard.css';
+import './DashboardPage.css';
 
-const Dashboard = () => {
+const DashboardPage = () => {
     const location = useLocation();
     const { user } = location.state || {};
 
     return (
         <DashboardLayout>
-            <NavigationMenu />
+            <NavigationMenu user={user}/>
             <div className="dashboard-content">
                 <UserProfile user={user} />
                 <Statistics />
@@ -21,4 +21,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default DashboardPage;
